@@ -1,0 +1,75 @@
+{
+    "menu": { "pizza": 8, "burger": 6, "pasta": 7, "salad": 5, "fries": 4, "soda": 2, "coffee": 2, "tea": 2 },
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": ["\\b(hi|hello|hey|howdy|yo)\\b", "how are you\\??", "good (day|morning|afternoon|evening)", "what'?s up"],
+            "responses": ["Hello! Welcome to Yummy Chummy Chatbot. What can I get you today?", "Hi there {name}, hungry? I can take your order!", "Hey there! Ask me for the menu whenever you're ready.", "Good to see you again, {name}!"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["\\bbye( bye)?\\b", "\\bgoodbye\\b", "see (you|ya)( later)?", "\\bcya\\b"],
+            "responses": ["Goodbye {name}, enjoy your meal!", "Come back soon!", "Thanks for ordering with us!", "See you next time!"]
+        },
+        {
+            "tag": "menu",
+            "patterns": ["\\bmenu\\b", "what (do you|can i) (have|serve|sell|order|get|eat)", "what('?s| is) (available|on offer)"],
+            "responses": ["Today's menu: pizza, burger, fries, pasta, salad, soda, coffee and tea.", "We serve pizza, burgers, salads, pasta and fries, plus soda, coffee and tea to drink.", "You can order burger, pizza, fries, or salad - and soda, coffee or tea!"]
+        },
+        {
+            "tag": "hungry",
+            "patterns": ["\\b(hungry|starving)\\b"],
+            "responses": ["You've come to the right place, {name}! Type 'menu' to see what we have.", "Let's fix that! Ask me for the menu.", "Hungry? Our pizza is very popular!"]
+        },
+        {
+            "tag": "price",
+            "patterns": ["how much (is|are|for|does)", "\\b(price|prices|cost|costs)\\b"],
+            "responses": ["Pizza is $8, Burger is $6, Pasta is $7, Fries is $4, Salad is $5. Drinks are $2 each.", "Everything is under $10! Pizza is $8, Burger is $6, Pasta is $7, Salad is $5, Fries is $4, drinks are $2 each.", "Our most popular combo: Special Pizza and Burger Deal for $9!"]
+        },
+         {
+            "tag": "delivery",
+            "patterns": ["\\bdeliver(y|ies)?\\b", "how long (will|does|until)", "when will .* (arrive|be ready|come)"],
+            "responses": ["Delivery will take 45 minutes, {name}.", "Your {order} should come in 20-30 minutes!", "We deliver within 10km for free!"]
+        },
+        {
+            "tag": "cancel",
+            "patterns": ["\\bcancel\\b", "remove .* order", "changed my mind"],
+            "responses": ["No problem {name}, I've cancelled your {order}.", "Done - the {order} has been removed from your order."]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["\\bthank(s| you)\\b", "\\bcheers\\b"],
+            "responses": ["You're welcome, {name}!", "Anytime! Anything else I can get you?", "Happy I could help you out!"]
+        },
+        {
+            "tag": "name_response",
+            "patterns": ["my name is (\\w+)", "i'?m called (\\w+)"],
+            "responses": ["Hello {name}! What can I get you today?", "Nice to meet you, {name}! Ask me for the menu whenever you're ready."]
+        },
+        {
+            "tag": "order_response",
+            "patterns": ["(?:i(?:'d|'ll| would| will)? ?(?:like|want|order|take|have)|(?:can|could) i (?:get|have|order)|give me).*?\\b(?:(\\d+) )?(pizzas?|burgers?|pasta|salads?|fries|sodas|coffee|teas?)\\b"],
+            "responses": ["One {order} coming right up, {name}!", "Great choice! Adding a {order} to your order.", "A {order} it is! Any beverage you'd want with that?"]
+        },
+        {
+            "tag": "frustrated",
+            "patterns": ["\\b(terrible|awful|horrible|worst|disgusting|useless)\\b"],
+            "responses": ["I'm really sorry about this, {name}. let me make it right want to change your {order}?", "Apologies {name}! Tell me what the issue was and I'll do my best to fix it!"]
+        },
+        {
+            "tag": "item_inquiry",
+            "patterns": ["\\b(pizzas?|burgers?|pasta|salads?|fries|sodas?|coffee|teas?)\\b"],
+            "responses": ["We do have {order}! Say 'I'll take a {order}' to order it.", "{order} is a great choice - just tell me you want it and its yours!"]
+        },
+        {
+            "tag": "checkout",
+            "patterns": ["\\bcheckout\\b", "that'?s (all|it)", "(my|the) (order|total)\\b", "\\bsummary\\b"],
+            "responses": ["Here's your order, {name}:\n{summary}\nSay 'confirm' to place it!"]
+        },
+        {
+            "tag": "confirm",
+            "patterns": ["\\bconfirm\\b", "\\bplace (my |the )?order\\b"],
+            "responses": ["Order placed, {name}!\n{summary}\nYour food will be ready in about 30 minutes!", "Confirmed, {name}! See you soon."]
+        }
+    ]
+}
